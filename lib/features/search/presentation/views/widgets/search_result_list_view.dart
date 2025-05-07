@@ -1,22 +1,23 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
+
+class SearchResultListView extends StatelessWidget {
+  const SearchResultListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      padding: const EdgeInsets.only(top: 16, bottom: 16),
+      padding: const EdgeInsets.only(top: 8, bottom: 16),
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
           child: BookListViewItem(),
         );
       },
-      itemCount: 4,
-      physics: const NeverScrollableScrollPhysics(),
+      itemCount: 8,
+      physics: const BouncingScrollPhysics(),
     );
   }
 }
