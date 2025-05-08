@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({
+    required this.rating,
+    required this.totalRating,
     super.key,
   });
+
+  final num rating, totalRating;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +23,15 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 6,
         ),
-        const Text(
-          "4.8",
+        Text(
+          rating.toString(),
           style: Styles.textStyle20,
         ),
         const SizedBox(
           width: 9,
         ),
         Text(
-          "(2395)",
+          '(${totalRating})',
           style: Styles.textStyle16.copyWith(color: Colors.grey),
         ),
       ],
